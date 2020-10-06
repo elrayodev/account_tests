@@ -14,10 +14,12 @@ public class Cuenta{
 	int totalComisiones2;
 	
 	public Cuenta(AlertListener alerts) {
+		
 		this.alerts = alerts;
 		this.holder = "Pancho";
 		this.balance = 1000;
 		this.zona = 1;
+		
 	}
 	
 	public Cuenta(String holder, int initialBalance, int zona) {
@@ -44,6 +46,7 @@ public class Cuenta{
 		return this.totalComisiones;
 	}
 	
+	//Metodo utilizado en TestAlmacenamientoTransacciones
 	public float getTotalComisionesFake() {
 		return this.totalComisiones2;
 	}
@@ -81,6 +84,7 @@ public class Cuenta{
 		
 	}
 	
+	//Metodo utilizado en TestAlmacenamientoTransacciones
 	public float debitFake(int balance, int zona) {
 		
 		float comision = balance * getPorcentaje(zona);

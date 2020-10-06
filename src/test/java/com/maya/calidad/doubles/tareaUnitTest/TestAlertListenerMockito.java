@@ -35,7 +35,7 @@ public class TestAlertListenerMockito {
 				
 		miCuenta.debit(950, miCuenta.getZona());
 		
-		verify(alert).sendAlert(miCuenta.getHolder() + ", your account balance is below 100");
+		verify(alertMock).sendAlert(miCuenta.getHolder() + ", your account balance is below 100");
 		
 		
 				

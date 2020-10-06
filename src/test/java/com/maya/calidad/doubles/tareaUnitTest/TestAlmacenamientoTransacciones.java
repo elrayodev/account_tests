@@ -27,6 +27,7 @@ public class TestAlmacenamientoTransacciones {
 		miCuenta = new Cuenta("Eloy",1000,1);
 		cuentaMock = mock(Cuenta.class);
 		
+		//Creamos comportamiento que almacene transacciones en un HashMap
 		when(cuentaMock.debitFake(anyInt(), anyInt())).thenAnswer(new Answer<Float>(){
 			public Float answer(InvocationOnMock invocation) throws Throwable {
 				int retiro = (Integer) invocation.getArguments()[0];
@@ -42,6 +43,7 @@ public class TestAlmacenamientoTransacciones {
 		}
 		);
 		
+		//Creamos comportamiento que suma todas las transacciones realizadas por una cuenta
 		when(cuentaMock.getTotalComisionesFake()).thenAnswer(new Answer<Float>(){
 			public Float answer(InvocationOnMock invocation) throws Throwable {
 				
